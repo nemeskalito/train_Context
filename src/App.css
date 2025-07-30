@@ -1,0 +1,48 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.block {
+  border: 1px black solid;
+  border-radius: 10px;
+  padding: 10px;
+  min-width: 300px;
+  margin-bottom: 20px;
+}
+.block li {
+  margin-left: -20px;
+}
+.user__btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.user__btn button {
+  margin-bottom: 5px;
+}
+.user__btn button:last-child {
+  margin: 0;
+}
+.task__btn {
+  display: flex;
+  flex-direction: column;
+}
+
+.task__btn button {
+  margin-bottom: 5px;
+}
+.task__btn:last-child {
+  margin: 0;
+}
+.cart__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cart__btn button:first-child {
+  width: 40px;
+  margin-right: 10px;
+}
