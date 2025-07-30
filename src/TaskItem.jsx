@@ -1,5 +1,6 @@
-import { memo, useState } from 'react'
+import { memo, useContext, useState } from 'react'
 import './App.css'
+import ThemeContext from './ThemeContext'
 const tasksRu = [
 	'Фильтровать строки',
 	'Искать слово',
@@ -23,7 +24,13 @@ const tasksRu = [
 	'Развернуть массив',
 ]
 const TaskItem = () => {
-	  console.log("TaskItem");
+	console.log('TaskItem')
+
+	const { isDark, setIsDark } = useContext(ThemeContext)
+
+	const themeClick = () => {
+		setIsDark({ ...isDark, taskItem: !isDark.taskItem })
+	}
 
 	const [tasks, setTasks] = useState(['Купить хлеб', 'Погулять с собакой'])
 	const addTask = () => {
@@ -36,7 +43,10 @@ const TaskItem = () => {
 	}
 
 	return (
-		<div className='block'>
+		<div className={`block ${isDark.taskItem ? 'light' : 'dark'}`}>
+			<button className='theme__btn' onClick={themeClick}>
+				Сменить тему
+			</button>
 			<h3>Список задач</h3>
 			<ul>
 				{tasks.map((item, index) => (
